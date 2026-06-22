@@ -76,11 +76,17 @@
     }
 
     /* ----- 6. Logo 图片变大（手机端占屏幕宽度的 60%） ----- */
-    #logo {
-        width: 60% !important;
-        max-width: 220px !important;
-        height: auto !important;
+    #logo-container {
+        width: 100% !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;      /* 允许在窄屏时换行 */
+        gap: 8px !important;
         margin-bottom: 15px !important;
+    }
+    .nav-logo {
+        width: auto !important;
+        max-width: 45% !important;       /* 两个 Logo 各占 45%，并排或自动换行 */
+        height: auto !important;
     }
 
     /* ----- 7. ISDTRA-2026 文字在 logo 下方居中 ----- */
@@ -175,8 +181,8 @@
 }
 /* ========== 通用手机适配（所有屏幕 ≤ 768px 生效） ========== */
 @media only screen and (orientation: landscape) and (max-width: 900px) {
-   /* 隐藏 Logo 图片（导航栏里的白色/深色 logo） */
-    #logo {
+   /* 隐藏整个双 Logo 容器（节省横屏垂直空间） */
+    #logo-container {
         display: none !important;
     }
     
