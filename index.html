@@ -549,20 +549,18 @@
   .zoom-status-badge { font-size: 10px; padding: 4px 10px; min-width: 70px; }
   .zoom-live-clock { font-size: 12px; padding: 6px 14px; }
 }
-    /* ========== 组织方 Logo 容器（纯白 Logo + 深色衬底，防遮挡） ========== */
+    /* ========== 组织方 Logo 容器（大尺寸，参考顶部导航） ========== */
     .org-logos-container {
-        display: block;
+        display: flex;
         flex-direction: row;
         justify-content: space-between; /* 宽屏：左右两端（左下、右下） */
         align-items: center;
-        height: auto;
-        width: 220px; /* 桌面端放大到 220px */
-        max-width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 30px 40px 15px 40px;
         box-sizing: border-box;
         position: relative;
-        z-index: 10; /* 确保在背景层之上 */
+        z-index: 10;
     }
 
     .org-logo-item {
@@ -571,32 +569,31 @@
         background: rgba(20, 20, 30, 0.7);
         backdrop-filter: blur(10px);
         border-radius: 12px;
-        padding: 10px 18px;
+        padding: 12px 20px; /* 适当增大内边距 */
         box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .org-logo-img {
         display: block;
         height: auto;
-        width: 140px; /* 桌面端宽度，可根据实际微调 */
+        width: 280px; /* 桌面端接近顶部导航的 300px */
         max-width: 100%;
     }
 
     /* ---- 平板 (768px - 1024px) ---- */
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-
         .org-logos-container {
             justify-content: center !important;
-            gap: 50px;
+            gap: 60px;
             padding: 25px 30px 15px 30px;
         }
 
         .org-logo-item {
-            padding: 8px 16px;
+            padding: 10px 16px;
         }
 
         .org-logo-img {
-            width: 120px;
+            width: 200px; /* 平板端缩小但仍醒目 */
         }
     }
 
@@ -606,16 +603,16 @@
             flex-direction: column !important;
             justify-content: center !important;
             align-items: center !important;
-            gap: 18px;
+            gap: 25px;
             padding: 20px 20px 15px 20px;
         }
 
         .org-logo-item {
-            padding: 8px 14px;
+            padding: 10px 16px;
         }
 
         .org-logo-img {
-            width: 110px;
+            width: 180px; /* 手机端足够大 */
             margin: 0 auto;
         }
     }
@@ -625,16 +622,16 @@
         .org-logos-container {
             flex-direction: row !important;
             justify-content: center !important;
-            gap: 30px;
+            gap: 40px;
             padding: 15px 20px 10px 20px;
         }
 
         .org-logo-item {
-            padding: 6px 12px;
+            padding: 8px 14px;
         }
 
         .org-logo-img {
-            width: 90px;
+            width: 150px; /* 横屏适度缩小，避免过高 */
         }
     }
 
