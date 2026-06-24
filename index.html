@@ -551,11 +551,13 @@
 }
     /* ========== 组织方 Logo 容器（纯白 Logo + 深色衬底，防遮挡） ========== */
     .org-logos-container {
-        display: flex;
+        display: block;
         flex-direction: row;
         justify-content: space-between; /* 宽屏：左右两端（左下、右下） */
         align-items: center;
-        max-width: 1200px;
+        height: auto;
+        width: 220px; /* 桌面端放大到 220px */
+        max-width: 100%;
         margin: 0 auto;
         padding: 30px 40px 15px 40px;
         box-sizing: border-box;
