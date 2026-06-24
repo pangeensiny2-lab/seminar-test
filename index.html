@@ -549,6 +549,85 @@
   .zoom-status-badge { font-size: 10px; padding: 4px 10px; min-width: 70px; }
   .zoom-live-clock { font-size: 12px; padding: 6px 14px; }
 }
+    /* ---- 组织方 Logo 容器（桌面宽屏：左右下角分布） ---- */
+    .org-logos-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; /* 宽屏：左右两端对齐 */
+        align-items: center;
+        width: 100%;
+        max-width: 1200px; /* 超宽屏限制最大宽度，防止 Logo 过于分散 */
+        margin: 0 auto;
+        padding: 30px 40px 10px 40px;
+        box-sizing: border-box;
+    }
+
+    .org-logo-item {
+        flex-shrink: 0;
+    }
+
+    .org-logo-img {
+        display: block;
+        height: auto;
+        width: 160px; /* 桌面端 Logo 宽度 */
+        max-width: 100%;
+        /* 如果背景较暗导致 Logo 看不清，可取消注释以下两行：
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  padding: 6px;
+  */
+    }
+
+    /* ---- 平板适配（768px - 1024px）：并排居中 ---- */
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+
+        .org-logos-container {
+            justify-content: center !important; /* 平板：居中并排 */
+            gap: 50px !important;
+            padding: 25px 30px 10px 30px !important;
+            max-width: 100% !important;
+        }
+
+        .org-logo-img {
+            width: 130px !important; /* 平板端稍小 */
+        }
+    }
+
+    /* ---- 手机端适配（≤768px）：居中、上下排列 ---- */
+    @media screen and (max-width: 768px) {
+
+        .org-logos-container {
+            flex-direction: column !important; /* 竖排 */
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 20px !important;
+            padding: 20px 20px 10px 20px !important;
+            max-width: 100% !important;
+        }
+
+        .org-logo-img {
+            width: 110px !important; /* 手机端更小 */
+            margin: 0 auto !important;
+        }
+    }
+
+    /* ---- 横屏手机适配（≤900px，横屏）---- */
+    @media only screen and (orientation: landscape) and (max-width: 900px) {
+
+        .org-logos-container {
+            /* 横屏宽度较大，保持并排但居中 */
+            flex-direction: row !important;
+            justify-content: center !important;
+            gap: 30px !important;
+            padding: 15px 20px 8px 20px !important;
+            max-width: 100% !important;
+        }
+
+        .org-logo-img {
+            width: 90px !important; /* 横屏高度有限，Logo 更小 */
+        }
+    }
+
 </style>
 </head>
 <body>    
@@ -1219,49 +1298,49 @@
 	
     <!-- Contact -->
     <section id="contact" class="tm-section-pad-top tm-parallax-2">
-      <div class="container tm-container-contact">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="mb-4 tm-section-title">Organizing Committee</h2>
-                <div class="mb-5 tm-underline">
-                  <div class="tm-underline-inner"></div>
+        <div class="container tm-container-contact">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-4 tm-section-title">Organizing Committee</h2>
+                    <div class="mb-5 tm-underline">
+                        <div class="tm-underline-inner"></div>
+                    </div>
+                    <p class="mb-5" id="black-shadow">
+                        <br /><strong>Chair:</strong> Professor Philips Fu-Lee WANG (Dean of School of S&T, HKMU)
+                        <br /><strong>Organizing Chairs:</strong> Dr. Yaru FU (HKMU), Dr. Kevin King Fai HUNG (Head of EECS, School of S&T, HKMU), Professor Ricky Yu-kwong KWOK (Vice President, HKMU)
+                        <br /><strong>Special Session Chairs:</strong> Dr. Aileen Yun HOU (HSUHK), Professor Hai LIU (Associate Dean, School of Decision Sciences, HSUHK)
+                        <br /><strong>Program Chairs:</strong> Dr. Bell Jianqing LIU (HKMU), Dr. Bruce Kwong Bun TONG (HKMU), Dr. Wyman Weiming WANG (HKMU), Dr. Debby Dan WANG (HKMU), Dr. Jimmy Sijie REN (HKMU)
+                        <br /><strong>Publicity Chairs:</strong> Dr. Vaithinathan KARTHIKEYAN (HKMU), Dr. Tony Moon Tong CHAN (HKMU), Dr. Jeff Siu Kei AU YEUNG (HKMU), Dr. Vincent Ho Yuet KWAN (HKMU), Dr. Ndudi EZEAMUZIE (HKMU), Mr. Harry Hing Lun LAI (HKMU)
+                        <br /><strong>Secretary:</strong> Dr. John Kwok Tai CHUI (HKMU)
+                        <br /><strong>Local Arrangement Chairs:</strong> Dr. Hongli HUANG (HKMU), Dr. Patrick Pak Yuen CHANG (HKMU), Mr. Hugh Ting Hung LUK (HKMU)
+                        <br /><strong>Technical Program Committee:</strong> Dr. Shu Yishu LI (HKMU), Dr. Kayley Xiaoxue MA (HKMU), Dr. Daisy Tiantian ZHANG (HKMU), Dr. Flora Jingyu ZHANG (HKMU), Dr. Wilson Hon Wai CHU (HKMU), Dr. Farah Fan YAN (HKMU). Dr. Adam Dong LIU (HKMU), Dr. Kevin Ka Wing TSE (HKMU), Dr. Steven Tak Shing TAI (HKMU), Professor Henry Hong-ning DAI (HKBU), Mr. Jimmy Xudong KANG (HKMU), Dr. Shirley Xueli CHEN (HKMU), Dr. Eddie Kai Chun TJON (HKMU), Dr. Dani Samer ASSI (HKMU), Dr. Shawn Xinyu WANG (HKMU), Dr. Charles Chao GUO (HKMU)
+                        <br /><strong>Finance Chairs:</strong> Dr. Alin Yalin LIU (HKMU), Dr. Tabitha Bishenghui TAO (HKMU)
+                        <br /><strong>Registration Chairs:</strong> Ms. Kexin SHI, Dr. Xiting WEN, Dr. Isaac Ka Ho LAU (HKMU), Dr. Elise Man Ling WONG (HKMU)
+                        <br /><strong>Web Master:</strong> Mr. Yuzhi ZHOU
+                        <br /><strong>Student Helpers:</strong> Mr. Wenshuai LIU, Mr. Tao QI, Ms. Jiahui FENG, Mr. Yongkang LI, Mr. Liang JI
+                        <br />
+                        <br /><strong>The symposium was fully supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China (Project No. UGC/IIDS16/E03/25).</strong>
+                    </p>
+                    <br />
                 </div>
-                <p class="mb-5" id="black-shadow">
-					<br/><strong>Chair:</strong> Professor Philips Fu-Lee WANG (Dean of School of S&T, HKMU)
-					<br/><strong>Organizing Chairs:</strong> Dr. Yaru FU (HKMU), Dr. Kevin King Fai HUNG (Head of EECS, School of S&T, HKMU), Professor Ricky Yu-kwong KWOK (Vice President, HKMU)
-					<br/><strong>Special Session Chairs:</strong> Dr. Aileen Yun HOU (HSUHK), Professor Hai LIU (Associate Dean, School of Decision Sciences, HSUHK) 
-					<br/><strong>Program Chairs:</strong> Dr. Bell Jianqing LIU (HKMU), Dr. Bruce Kwong Bun TONG (HKMU), Dr. Wyman Weiming WANG (HKMU), Dr. Debby Dan WANG (HKMU), Dr. Jimmy Sijie REN (HKMU)
-					<br/><strong>Publicity Chairs:</strong> Dr. Vaithinathan KARTHIKEYAN (HKMU), Dr. Tony Moon Tong CHAN (HKMU), Dr. Jeff Siu Kei AU YEUNG (HKMU), Dr. Vincent Ho Yuet KWAN (HKMU), Dr. Ndudi EZEAMUZIE (HKMU), Mr. Harry Hing Lun LAI (HKMU)
-					<br/><strong>Secretary:</strong> Dr. John Kwok Tai CHUI (HKMU)
-					<br/><strong>Local Arrangement Chairs:</strong> Dr. Hongli HUANG (HKMU), Dr. Patrick Pak Yuen CHANG (HKMU), Mr. Hugh Ting Hung LUK (HKMU)
-					<br/><strong>Technical Program Committee:</strong> Dr. Shu Yishu LI (HKMU), Dr. Kayley Xiaoxue MA (HKMU), Dr. Daisy Tiantian ZHANG (HKMU), Dr. Flora Jingyu ZHANG (HKMU), Dr. Wilson Hon Wai CHU (HKMU), Dr. Farah Fan YAN (HKMU). Dr. Adam Dong LIU (HKMU), Dr. Kevin Ka Wing TSE (HKMU), Dr. Steven Tak Shing TAI (HKMU), Professor Henry Hong-ning DAI (HKBU), Mr. Jimmy Xudong KANG (HKMU), Dr. Shirley Xueli CHEN (HKMU), Dr. Eddie Kai Chun TJON (HKMU), Dr. Dani Samer ASSI (HKMU), Dr. Shawn Xinyu WANG (HKMU), Dr. Charles Chao GUO (HKMU)
-					<br/><strong>Finance Chairs:</strong> Dr. Alin Yalin LIU (HKMU), Dr. Tabitha Bishenghui TAO (HKMU)
-					<br/><strong>Registration Chairs:</strong> Ms. Kexin SHI, Dr. Xiting WEN, Dr. Isaac Ka Ho LAU (HKMU), Dr. Elise Man Ling WONG (HKMU)
-					<br/><strong>Web Master:</strong> Mr. Yuzhi ZHOU
-					<br/><strong>Student Helpers:</strong> Mr. Wenshuai LIU, Mr. Tao QI, Ms. Jiahui FENG, Mr. Yongkang LI, Mr. Liang JI
-          <br/>
-					<br/><strong>The symposium was fully supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China (Project No. UGC/IIDS16/E03/25).</strong>
-                </p>
-				<br />
-            </div>
-            <!--
+                <!--
             <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
               <a href="tel:+85227686800" class="tm-contact-item-link">
                   <i class="fas fa-3x fa-phone mr-4"></i>
                   <span class="mb-0">+852 2768 6800</span>
-              </a>              
+              </a>
             </div>
             <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
               <a href="mailto:info@company.co" class="tm-contact-item-link">
                   <i class="fas fa-3x fa-envelope mr-4"></i>
                   <span class="mb-0">icqca-2021@ouhk.edu.hk</span>
-              </a>              
+              </a>
             </div>
             <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
               <a href="https://www.google.com/maps/place/%E9%A6%99%E6%B8%AF%E5%85%AC%E9%96%8B%E5%A4%A7%E5%AD%B8/@22.3163601,114.177993,17z/data=!3m1!4b1!4m5!3m4!1s0x340400dad082c5bb:0xbfcb1be779b47cb!8m2!3d22.3163552!4d114.1801817" class="tm-contact-item-link">
                   <i class="fas fa-3x fa-map-marker-alt mr-4"></i>
                   <span class="mb-0">Location on Maps</span>
-              </a>              
+              </a>
             </div>
             <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
               <form action="" method="get">
@@ -1269,14 +1348,26 @@
                 <button type="submit" class="btn tm-btn-submit">Submit</button>
               </form>
             </div>
-			-->
+            -->
+            </div>
         </div>
-      </div>
-      <footer class="text-center small tm-footer">
-          <p class="mb-0">
-            Copyright &copy; 2026 Hong Kong Metropolitan University
-          </p>
-        </footer>
+        <!-- ★★★ 新增：组织方 Logo 容器 ★★★ -->
+        <div class="org-logos-container">
+            <div class="org-logo-item">
+                <img src="img/HSU_school_logo.png" alt="HKMU Logo" class="org-logo-img" />
+            </div>
+            <div class="org-logo-item">
+                <img src="img/HSU_school_logo.png" alt="HSU Logo" class="org-logo-img" />
+            </div>
+        </div>
+        <!-- ★★★ Logo 容器结束 ★★★ -->
+
+        <footer class="text-center small tm-footer">
+            <footer class="text-center small tm-footer">
+                <p class="mb-0">
+                    Copyright &copy; 2026 Hong Kong Metropolitan University
+                </p>
+            </footer>
     </section>
     <script src="js/jquery-1.9.1.min.js"></script>     
     <script src="slick/slick.min.js"></script>
