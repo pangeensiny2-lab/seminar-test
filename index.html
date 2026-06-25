@@ -400,6 +400,14 @@
     .tm-intro-text-container .tm-next {
       margin-top: 2cm !important;
     }
+}
+/* ===== 竖屏平板通用查询（iPad / Android / Surface 竖屏） ===== */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    /* 显示空行容器，拉开与上方文字的距离 */
+    .footer-spacer {
+        display: block !important;
+    }
+    /* footer logo 改为上下排列 */
     .footer-logos {
         flex-direction: column !important;
         gap: 20px !important;
@@ -410,9 +418,6 @@
         width: auto !important;
         max-width: 80% !important;
         height: auto !important;
-    }
-        .footer-spacer {
-        display: block !important;
     }
 }
 /* ========== Zoom 会议入口卡片样式（第一轮同款） ========== */
@@ -623,7 +628,7 @@
       <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">     
       <div id="logo-container" style="display:flex; align-items:center; gap:12px; flex-shrink:0;">
         <img src="img/logo-hkmu_white.png" alt="HKMU Logo" class="nav-logo" id="logo" />
-       <img src="img/HSU_logo_white.png" alt="HSU Logo" class="nav-logo" id="logo-hsu" />
+       <!-- <img src="img/HSU_logo_white.png" alt="HSU Logo" class="nav-logo" id="logo-hsu" /> -->
       </div>
         <div class="container">   
           <div class="tm-next">
