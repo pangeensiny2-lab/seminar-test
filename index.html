@@ -549,689 +549,620 @@
   .zoom-status-badge { font-size: 10px; padding: 4px 10px; min-width: 70px; }
   .zoom-live-clock { font-size: 12px; padding: 6px 14px; }
 }
-    /* ========== 组织方 Logo 容器（响应式备用） ========== */
-    .org-logos-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 40px auto 0 auto;
-        padding: 20px 40px 10px 40px;
-        box-sizing: border-box;
-        position: relative;
-        z-index: 10;
-    }
 
-    .org-logo-item {
-        flex-shrink: 0;
-        background: rgba(20, 20, 30, 0.7);
-        backdrop-filter: blur(10px);
-        border-radius: 12px;
-        padding: 12px 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
 
-    /* PC端图片大小由内联样式控制，此处仅作后备 */
-    .org-logo-img {
-        display: block;
-        height: auto;
-        width: 300px; /* 后备值，实际以内联样式为准 */
-        max-width: 100%;
-    }
 
-    /* 平板 */
-    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
-        .org-logos-container {
-            justify-content: center;
-            gap: 60px;
-            padding: 25px 30px 15px 30px;
-        }
+.footer-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;      /* 保持居中 */
+  gap: 40px;
+  /* 删除 position: relative; top: 85px; */
+  padding-top: 0px;            /* ① 替代原来的 top，给 logo 上方留空间（可调） */
+  padding-left: 100px;           /* ② ★ 右移量，数值越大越靠右（可调） */
+  margin-bottom: 0px;
+  width: 100%;
+  box-sizing: border-box;       /* 防止 padding 撑大宽度 */
+}
+.footer-logos img:first-child {
+  width: 360px;
+  height: auto;
+  display: block;
+}
+.footer-logos img:last-child {
+  width: 550px;
+  height: auto;
+  display: block;
+}
 
-        .org-logo-img {
-            width: 200px !important;
-        }
-    }
-
-    /* 手机竖屏 */
-    @media screen and (max-width: 768px) {
-        .org-logos-container {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-            padding: 20px 20px 15px 20px;
-        }
-
-        .org-logo-img {
-            width: 180px !important;
-        }
-    }
-
-    /* 手机横屏 */
-    @media only screen and (orientation: landscape) and (max-width: 900px) {
-        .org-logos-container {
-            flex-direction: row;
-            justify-content: center;
-            gap: 40px;
-            padding: 15px 20px 10px 20px;
-        }
-
-        .org-logo-img {
-            width: 150px !important;
-        }
-    }
-
+/* 新增：logo 反向下移量 */
+.footer-copyright {
+  margin-top: 10px;             /* ★ 下移量，数值越小越靠下（可调） */
+  margin-bottom: 0;
+}
 </style>
 </head>
-<body>
+<body>    
     <!-- Hero section -->
     <section id="hero" class="text-white tm-font-big tm-parallax">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
-            <div id="logo-container" style="display:flex; align-items:center; gap:12px; flex-shrink:0;">
-                <img src="img/logo-hkmu_white.png" alt="HKMU Logo" class="nav-logo" id="logo" />
-                <img src="img/HSU_logo_white.png" alt="HSU Logo" class="nav-logo" id="logo-hsu" />
-            </div>
-            <div class="container">
-                <div class="tm-next">
-                    <a href="#hero" class="navbar-brand">ISDTRA-2026</a>
-                </div>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars navbar-toggler-icon"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link tm-nav-link" href="#introduction">Introduction</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tm-nav-link" href="#keynotes">Keynotes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tm-nav-link" href="#program">Program</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tm-nav-link" href="#registration">Registration</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tm-nav-link" href="#venue">Venue</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link tm-nav-link" href="#contact">Organizer</a>
-                        </li>
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link tm-nav-link" href="#photos">Photos</a>
-                        </li>
-                        -->
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-
-        <div class="text-center tm-hero-text-container">
-            <div class="tm-hero-text-container-inner">
-                <h2 class="tm-hero-title">ISDTRA-2026</h2>
-                <p class="tm-hero-subtitle">
-                    International Symposium on Digital Twin Research and Applications 2026 (ISDTRA-2026)
-                    <br />Theme: Advancing Smart Cities for a Sustainable Future
-                    <br />
-                    <br />Date: <em>10 - 11 July 2026 (Fri - Sat)</em>
-                    <br />Mode: <em>Face-to-Face and Online</em>
-                    <br />Venue: <em>Jockey Club Council Chamber, Main Campus, Hong Kong Metropolitan University (HKMU)</em>
-                    <br /><em>The symposium was fully supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China</em>
-                    <br />Project No: <em>UGC/IIDS16/E03/25</em>
-                </p>
-            </div>
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">     
+      <div id="logo-container" style="display:flex; align-items:center; gap:12px; flex-shrink:0;">
+        <img src="img/logo-hkmu_white.png" alt="HKMU Logo" class="nav-logo" id="logo" />
+       <!-- <img src="img/HSU_logo_white.png" alt="HSU Logo" class="nav-logo" id="logo-hsu" /> -->
+      </div>
+        <div class="container">   
+          <div class="tm-next">
+              <a href="#hero" class="navbar-brand">ISDTRA-2026</a>
+          </div>             
+            
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#introduction">Introduction</a>
+              </li>
+			  <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#keynotes">Keynotes</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#program">Program</a>
+              </li>
+			  <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#registration">Registration</a>
+              </li>			  
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#venue">Venue</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#contact">Organizer</a>
+              </li>
+			  <!--
+			  <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#photos">Photos</a>
+              </li>
+			  -->
+            </ul>
+			
+          </div>
         </div>
+      </nav>
+      
+      <div class="text-center tm-hero-text-container">
+        <div class="tm-hero-text-container-inner">
+            <h2 class="tm-hero-title">ISDTRA-2026</h2>
+            <p class="tm-hero-subtitle">
+              International Symposium on Digital Twin Research and Applications 2026 (ISDTRA-2026)
+              <br />Theme: Advancing Smart Cities for a Sustainable Future
+			  <br />
+			  <br />Date: <em>10 - 11 July 2026 (Fri - Sat)</em>
+			  <br />Mode: <em>Face-to-Face and Online</em>
+			  <br />Venue: <em>Jockey Club Council Chamber, Main Campus, Hong Kong Metropolitan University (HKMU)</em>
+			  <br /><em>The symposium was fully supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China</em>
+			  <br />Project No: <em>UGC/IIDS16/E03/25</em>
+            </p>
+        </div>        
+      </div>
 
-        <div class="tm-next tm-intro-next">
-            <a href="#introduction" class="text-center tm-down-arrow-link">
-                <i class="fas fa-3x fa-caret-down tm-down-arrow"></i>
-            </a>
-        </div>
+      <div class="tm-next tm-intro-next">
+        <a href="#introduction" class="text-center tm-down-arrow-link">
+          <i class="fas fa-3x fa-caret-down tm-down-arrow"></i>
+        </a>
+      </div>      
     </section>
 
     <section id="introduction" class="tm-section-pad-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="img/introduction.jpg" alt="Image" class="img-fluid tm-intro-img" />
-                </div>
-                <div class="col-lg-6">
-                    <div class="tm-intro-text-container">
-                        <h2 class="tm-text-primary mb-4 tm-section-title">Introduction</h2>
-                        <div style="max-height: 400px; overflow-y: auto;padding-right: 5mm;">
-                            <p class="mx-auto tm-work-description" style="text-align: justify;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="img/introduction.jpg" alt="Image" class="img-fluid tm-intro-img"/>
+          </div>
+          <div class="col-lg-6">
+            <div class="tm-intro-text-container">
+                <h2 class="tm-text-primary mb-4 tm-section-title">Introduction</h2>
+                <div style="max-height: 400px; overflow-y: auto;padding-right: 5mm;">
+					<p class="mx-auto tm-work-description" style="text-align: justify;">
 
-                                In the era of swift urban development, the concept of digital twins has surfaced as a transformative technological advancement poised to overhaul the planning, administration, and sustainability of smart cities. Digital twins are virtual replicas that mirror the physical characteristics and actions of tangible entities. Through consistent data collection on the operational status of physical infrastructure and subsequent data processing, digital twins enable seamless real-time synchronization between physical and digital realms. This synchronization, in turn, streamlines the management, optimization, and strategic decision-making processes for practical systems.<br /><br />
+						In the era of swift urban development, the concept of digital twins has surfaced as a transformative technological advancement poised to overhaul the planning, administration, and sustainability of smart cities. Digital twins are virtual replicas that mirror the physical characteristics and actions of tangible entities. Through consistent data collection on the operational status of physical infrastructure and subsequent data processing, digital twins enable seamless real-time synchronization between physical and digital realms. This synchronization, in turn, streamlines the management, optimization, and strategic decision-making processes for practical systems.<br/><br/>
 
-                                While digital twins hold great promise, their practical applications encounter several challenges and unresolved issues. These include ensuring the seamless integration of data from diverse sources to construct accurate and comprehensive digital twins, improving the fidelity and precision of digital twin models to capture real-world intricacies, developing scalable frameworks adaptable to the dynamic nature of physical systems, and fortifying digital twin edge networks and data against cybersecurity threats while upholding data privacy. Addressing these challenges requires interdisciplinary research and collaborative efforts. Specifically, the successful implementation of digital twins and the realization of smart cities depend on collaborative endeavors across various fields such as computer science, intelligent communication, manufacturing, robotics, and beyond. Thereby, a gathering is of high necessity to bring together various stakeholders, enabling them to exchange up-to-date knowledge and experiences.<br /><br />
+						While digital twins hold great promise, their practical applications encounter several challenges and unresolved issues. These include ensuring the seamless integration of data from diverse sources to construct accurate and comprehensive digital twins, improving the fidelity and precision of digital twin models to capture real-world intricacies, developing scalable frameworks adaptable to the dynamic nature of physical systems, and fortifying digital twin edge networks and data against cybersecurity threats while upholding data privacy. Addressing these challenges requires interdisciplinary research and collaborative efforts. Specifically, the successful implementation of digital twins and the realization of smart cities depend on collaborative endeavors across various fields such as computer science, intelligent communication, manufacturing, robotics, and beyond. Thereby, a gathering is of high necessity to bring together various stakeholders, enabling them to exchange up-to-date knowledge and experiences.<br/><br/>
 
-                                Under the circumstances, we will use this project to organize a two-day symposium titled <em>Digital Twin Research and Applications: Advancing Smart Cities for a Sustainable Future</em>. This symposium aims to explore the multifaceted applications and complexities of integrating digital twins into diverse smart city applications. Through this two-day symposium, we plan to provide a collaborative platform for experts from academia, industry, and government to exchange ideas, share best practices, and foster interdisciplinary collaborations in advancing digital twin technologies. In detail, multiple keynote speeches will be delivered during this symposium to explore the diverse applications of digital twins in smart city infrastructure, transportation systems, energy management, environmental sustainability, and sixth-generation communication systems (6G). Moreover, industry practitioners will be invited to share their innovative solutions, testbeds, and perspectives on utilizing digital twins in smart city contexts. Furthermore, policymakers will be invited to share strategic insights during the event.<br /><br />
+						Under the circumstances, we will use this project to organize a two-day symposium titled <em>Digital Twin Research and Applications: Advancing Smart Cities for a Sustainable Future</em>. This symposium aims to explore the multifaceted applications and complexities of integrating digital twins into diverse smart city applications. Through this two-day symposium, we plan to provide a collaborative platform for experts from academia, industry, and government to exchange ideas, share best practices, and foster interdisciplinary collaborations in advancing digital twin technologies. In detail, multiple keynote speeches will be delivered during this symposium to explore the diverse applications of digital twins in smart city infrastructure, transportation systems, energy management, environmental sustainability, and sixth-generation communication systems (6G). Moreover, industry practitioners will be invited to share their innovative solutions, testbeds, and perspectives on utilizing digital twins in smart city contexts. Furthermore, policymakers will be invited to share strategic insights during the event.<br/><br/>
 
-                                Throughout the project implementation, we plan to engage undergraduate students, research scholars, and faculty members from HKMU, HSUHK, and other institutions to participate. Doing so can be beneficial for fostering university students’ interest in conducting research based on the topics proposed in this project and developing multiple perspectives that will benefit students in their further studies and career aspirations. Furthermore, the topics covered in this symposium are essential components that could be integrated as new chapters within the curricula of related courses offered by the selffinancing universities. In summary, the goal of this project is to create a mutually beneficial environment for students, faculty, and stakeholders, paving the way for the successful implementation of digital twins in smart cities within Hong Kong.
-                            </p>
-                        </div>
-                        <div class="tm-next" style="margin-top: 1cm;">
-                            <a href="#program" class="tm-intro-text tm-btn-primary">Detailed Program</a>
-                        </div>
-                    </div>
+						Throughout the project implementation, we plan to engage undergraduate students, research scholars, and faculty members from HKMU, HSUHK, and other institutions to participate. Doing so can be beneficial for fostering university students’ interest in conducting research based on the topics proposed in this project and developing multiple perspectives that will benefit students in their further studies and career aspirations. Furthermore, the topics covered in this symposium are essential components that could be integrated as new chapters within the curricula of related courses offered by the selffinancing universities. In summary, the goal of this project is to create a mutually beneficial environment for students, faculty, and stakeholders, paving the way for the successful implementation of digital twins in smart cities within Hong Kong.
+					  </p>
+				</div>
+                <div class="tm-next" style="margin-top: 1cm;">
+                  <a href="#program" class="tm-intro-text tm-btn-primary">Detailed Program</a>
                 </div>
             </div>
+          </div>
         </div>
+	</div>
 
         <div class="row tm-section-pad-top" style="padding-right: 5mm;">
-            <div class="col-lg-4">
-                <!--<i class="fas fa-4x fa-bus text-center tm-icon"></i>-->
-                <h4 class="text-center tm-text-primary mb-4 ">Objectives</h4>
-                <ul style="text-align: justify; hyphens: auto;" lang="en">
-                    <li>To enhance the research capabilities of individual academic staff, especially junior faculty members, at both HKMU and HSUHK. This will help them broaden their research networks, improve their reputation, promote collaborations in funding applications, knowledge transfer, and exchanges, and make substantial contributions to their respective research fields. These advancements will equip staff members with the ability to transform their research findings and fresh insights into concrete enhancements within teaching and learning environments. Besides, digital twin-enabled teaching solutions are intended to be developed to deliver more innovative and effective educational experiences for students.</li>
-                    <li>To foster active involvement of undergraduate and postgraduate students in research endeavors, stimulating the exploration of new knowledge. This initiative will offer students valuable insights into both industrial and academic realms, helping them figure out clear career pathways and enhancing their capacity to serve society effectively. Through engaging in these activities, students will broaden their horizons, gain a deeper understanding of digital twins in smart cities, and position themselves as standout individuals in the upcoming era of intelligence. By doing so, we aim to lay a robust foundation for nurturing the next generation of technology leaders and innovators in Hong Kong.</li>
-                    <li>To encourage increased collaboration among the government, academia, and industry from Hong Kong, the Greater Bay Area (GBA), and overseas countries by engaging in collaborative research on computer science, intelligent communications, manufacturing, robotics and beyond. These collaborations will be advantageous in not only facilitating the practical implementation of digital twins in real systems but also in driving innovation and advancements in these fields. Moreover, they will play a pivotal role in fostering technology transfer and commercialization through transforming academic achievements and incubating start-up companies.</li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 mt-5 mt-lg-0">
-                <!--<i class="fas fa-4x fa-bicycle text-center tm-icon"></i>-->
-                <h4 class="text-center tm-text-primary mb-4">Key Topics</h4>
-                <ul style="text-align: justify;">
-                    <li>From Resource Allocation to Reinforcement and Federated Learning in Communication Networks</li>
-                    <li>From Pervasive Sensing to Digital Twins: Data and AI for Future Biomedical and Smart Health Systems</li>
-                    <li>Holistic AI-Driven Vehicular Networks for Digital Twins: Integrating Communications, Computing, and IoT</li>
-                    <li>AI for Digital Twin</li>
-                    <li>Enabling Cross-Border Smart Cities: The Role of ODR and LawTech in a Digital Future </li>
-                    <li>Towards Ultra-low Latency and Ultra-high Capacity Optical Communications for Future Smart Cities</li>
-                    <li>Federated Digital Twin Edge Networks for IIoT and 6G</li>
-                    <li>Three Enabling Technologies for 6G Digital Twin Channel: Multimodal Sensing, Environment Knowledge, and Large Model</li>
-                    <li>TF-Diffusion: From Fine-Tuning to Training-Free Generative Models for RF-Based Human Activity Recognition</li>
-                    <li>Unlocking the Potential of AI-RAN: A Pathway towards Future Network Intelligence</li>
-                    <li>Empowering Future Smart City Networks with Fluid Antenna Systems</li>
-                    <li>Empowering Smart City Development by: “iAM Smart” and Digital Corporate Identity (CorpID) Platform</li>
-                    <li>Intelligent Sensing and Communication in 6G: Towards a Sustainable Future</li>
-                </ul>
-            </div>
-            <div class="col-lg-4 mt-5 mt-lg-0">
-                <!--<i class="fas fa-4x fa-city text-center tm-icon"></i>-->
-                <h4 class="text-center tm-text-primary mb-4">Keynote Speakers</h4>
-                <ul style="text-align: justify;">
-                    <li>Professor Kin K. LEUNG, Imperial College London, United Kingdom</li>
-                    <li>Professor Caroline Ling LI, City University of London, United Kingdom</li>
-                    <li>Professor Zhengguo SHENG, University of Sussex, United Kingdom</li>
-                    <li>Professor Yan ZHANG, University of Electronic Science and Technology of China, China </li>
-                    <li>Ir Albert Chun Sing LEUNG, eBRAM International Online Dispute Resolution Centre, Hong Kong SAR, China </li>
-                    <li>Dr. Yang HONG, Microsoft Azure Fiber, United Kingdom</li>
-                    <li>Professor Sabita MAHARJAN, University of Oslo, Norway</li>
-                    <li>Professor Jianhua ZHANG, Beijing University of Posts and Telecommunications, China</li>
-                    <li>Professor Shiwen MAO, Auburn University, United States of America</li>
-                    <li>Professor Tony Q. S. QUEK, Singapore University of Technology and Design, Singapore</li>
-                    <li>Professor Yongxu ZHU, Southeast University, China</li>
-                    <li>Dr. Chung NG, Digital Policy Office, Hong Kong SAR, China</li>
-                    <li>Professor Shaodan MA, University of Macau, Macau, China</li>
-                    <li>Mr. Dennis WONG, Hong Kong Telecom, Hong Kong SAR, China</li>
-                    <li>Dr. Patrick LAM, Zyetric Technologies Limited, Hong Kong SAR, China</li>
-                </ul>
-            </div>
+          <div class="col-lg-4">
+            <!--<i class="fas fa-4x fa-bus text-center tm-icon"></i>-->
+            <h4 class="text-center tm-text-primary mb-4 ">Objectives</h4>
+            <ul style="text-align: justify; hyphens: auto;" lang="en">
+				<li>To enhance the research capabilities of individual academic staff, especially junior faculty members, at both HKMU and HSUHK. This will help them broaden their research networks, improve their reputation, promote collaborations in funding applications, knowledge transfer, and exchanges, and make substantial contributions to their respective research fields. These advancements will equip staff members with the ability to transform their research findings and fresh insights into concrete enhancements within teaching and learning environments. Besides, digital twin-enabled teaching solutions are intended to be developed to deliver more innovative and effective educational experiences for students.</li>
+				<li>To foster active involvement of undergraduate and postgraduate students in research endeavors, stimulating the exploration of new knowledge. This initiative will offer students valuable insights into both industrial and academic realms, helping them figure out clear career pathways and enhancing their capacity to serve society effectively. Through engaging in these activities, students will broaden their horizons, gain a deeper understanding of digital twins in smart cities, and position themselves as standout individuals in the upcoming era of intelligence. By doing so, we aim to lay a robust foundation for nurturing the next generation of technology leaders and innovators in Hong Kong.</li>
+				<li>To encourage increased collaboration among the government, academia, and industry from Hong Kong, the Greater Bay Area (GBA), and overseas countries by engaging in collaborative research on computer science, intelligent communications, manufacturing, robotics and beyond. These collaborations will be advantageous in not only facilitating the practical implementation of digital twins in real systems but also in driving innovation and advancements in these fields. Moreover, they will play a pivotal role in fostering technology transfer and commercialization through transforming academic achievements and incubating start-up companies.</li>
+			</ul>
+          </div>
+        
+        <div class="col-lg-4 mt-5 mt-lg-0">
+          <!--<i class="fas fa-4x fa-bicycle text-center tm-icon"></i>-->
+          <h4 class="text-center tm-text-primary mb-4">Key Topics</h4>
+			<ul style="text-align: justify;">
+				<li>From Resource Allocation to Reinforcement and Federated Learning in Communication Networks</li>
+				<li>From Pervasive Sensing to Digital Twins: Data and AI for Future Biomedical and Smart Health Systems</li>
+				<li>Holistic AI-Driven Vehicular Networks for Digital Twins: Integrating Communications, Computing, and IoT</li>
+				<li>AI for Digital Twin</li>
+				<li>Enabling Cross-Border Smart Cities: The Role of ODR and LawTech in a Digital Future </li>
+				<li>Towards Ultra-low Latency and Ultra-high Capacity Optical Communications for Future Smart Cities</li>
+        <li>Federated Digital Twin Edge Networks for IIoT and 6G</li>
+        <li>Three Enabling Technologies for 6G Digital Twin Channel: Multimodal Sensing, Environment Knowledge, and Large Model</li>
+        <li>TF-Diffusion: From Fine-Tuning to Training-Free Generative Models for RF-Based Human Activity Recognition</li>
+        <li>Unlocking the Potential of AI-RAN: A Pathway towards Future Network Intelligence</li>
+        <li>Empowering Future Smart City Networks with Fluid Antenna Systems</li>
+        <li>Empowering Smart City Development by: “iAM Smart” and Digital Corporate Identity (CorpID) Platform</li>
+        <li>Intelligent Sensing and Communication in 6G: Towards a Sustainable Future</li>
+			</ul>
         </div>
+        <div class="col-lg-4 mt-5 mt-lg-0">
+          <!--<i class="fas fa-4x fa-city text-center tm-icon"></i>-->
+          <h4 class="text-center tm-text-primary mb-4">Keynote Speakers</h4>
+			<ul style="text-align: justify;">
+				<li>Professor Kin K. LEUNG, Imperial College London, United Kingdom</li>
+				<li>Professor Caroline Ling LI, City University of London, United Kingdom</li>
+				<li>Professor Zhengguo SHENG, University of Sussex, United Kingdom</li>
+				<li>Professor Yan ZHANG, University of Electronic Science and Technology of China, China </li>
+				<li>Ir Albert Chun Sing LEUNG, eBRAM International Online Dispute Resolution Centre, Hong Kong SAR, China </li>
+				<li>Dr. Yang HONG, Microsoft Azure Fiber, United Kingdom</li>
+				<li>Professor Sabita MAHARJAN, University of Oslo, Norway</li>
+				<li>Professor Jianhua ZHANG, Beijing University of Posts and Telecommunications, China</li>
+				<li>Professor Shiwen MAO, Auburn University, United States of America</li>
+				<li>Professor Tony Q. S. QUEK, Singapore University of Technology and Design, Singapore</li>
+				<li>Professor Yongxu ZHU, Southeast University, China</li>
+        <li>Dr. Chung NG, Digital Policy Office, Hong Kong SAR, China</li>
+        <li>Professor Shaodan MA, University of Macau, Macau, China</li>
+        <li>Mr. Dennis WONG, Hong Kong Telecom, Hong Kong SAR, China</li>
+        <li>Dr. Patrick LAM, Zyetric Technologies Limited, Hong Kong SAR, China</li>
+			</ul>
+        </div>
+      </div>
     </section>
     <section id="keynotes" class="tm-section-pad-top">
-        <div class="container tm-container-gallery">
-            <div class="row">
-                <div class="text-center col-12">
-                    <h2 class="tm-text-primary tm-section-title mb-4">Keynotes</h2>
-                    <p class="mx-auto tm-work-description">
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="mx-auto tm-gallery-container">
-                        <div class="grid tm-gallery">
-                            <a href="img/1_Kin_K_Leung.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/1_Kin_K_Leung.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Kin K. <span>LEUNG</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/2_Ling_Caroline_Li.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/2_Ling_Caroline_Li.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Caroline Ling <span>LI</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/3_Zhengguo_Sheng.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/3_Zhengguo_Sheng.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Zhengguo <span>SHENG</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/4_Yan_Zhang.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/4_Yan_Zhang.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Yan <span>ZHANG</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/5_Albert_Leung.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/5_Albert_Leung.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Ir Albert Chun Sing <span>LEUNG</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/6_Yang_Hong.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/6_Yang_Hong.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Dr. Yang <span>HONG</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/7_Sabita_Maharjan.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/7_Sabita_Maharjan.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Sabita <span>MAHARJAN</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/8_Jianhua_Zhang.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/8_Jianhua_Zhang.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Jianhua <span>ZHANG</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/9_Shiwen_Mao.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/9_Shiwen_Mao.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Shiwen <span>MAO</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/10_Tony_Quek.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/10_Tony_Quek.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Tony Q.S. <span>QUEK</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/11_Yongxu_Zhu.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/11_Yongxu_Zhu.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Yongxu <span>ZHU</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/12_Ng_Ping Chung.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/12_Ng_Ping Chung.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Dr. Chung <span>NG</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                            <a href="img/13_Ma_Shaodan.JPG">
-                                <figure class="effect-honey tm-gallery-item">
-                                    <img src="img/13_Ma_Shaodan.JPG" alt="Image" class="img-fluid">
-                                    <figcaption2>
-                                        <h2><i>Professor Shaodan <span>MA</span></i></h2>
-                                    </figcaption2>
-                                </figure>
-                            </a>
-                        </div>
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Keynotes</h2>
+              <p class="mx-auto tm-work-description">
+              </p>
+          </div>            
+        </div>
+		
+        <div class="row">
+            <div class="col-12">
+                <div class="mx-auto tm-gallery-container">
+                    <div class="grid tm-gallery">
+                      <a href="img/1_Kin_K_Leung.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/1_Kin_K_Leung.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+            <h2><i>Professor Kin K. <span>LEUNG</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+					  <a href="img/2_Ling_Caroline_Li.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/2_Ling_Caroline_Li.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+            <h2><i>Professor Caroline Ling <span>LI</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/3_Zhengguo_Sheng.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/3_Zhengguo_Sheng.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Professor Zhengguo <span>SHENG</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/4_Yan_Zhang.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/4_Yan_Zhang.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+              <h2><i>Professor Yan <span>ZHANG</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/5_Albert_Leung.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/5_Albert_Leung.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Ir Albert Chun Sing <span>LEUNG</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/6_Yang_Hong.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/6_Yang_Hong.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+              <h2><i>Dr. Yang <span>HONG</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/7_Sabita_Maharjan.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/7_Sabita_Maharjan.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Professor Sabita <span>MAHARJAN</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/8_Jianhua_Zhang.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/8_Jianhua_Zhang.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Professor Jianhua <span>ZHANG</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/9_Shiwen_Mao.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/9_Shiwen_Mao.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Professor Shiwen <span>MAO</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                       <a href="img/10_Tony_Quek.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/10_Tony_Quek.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Professor Tony Q.S. <span>QUEK</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                       <a href="img/11_Yongxu_Zhu.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/11_Yongxu_Zhu.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Professor Yongxu <span>ZHU</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/12_Ng_Ping Chung.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/12_Ng_Ping Chung.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Dr. Chung <span>NG</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
+                      <a href="img/13_Ma_Shaodan.JPG">
+                        <figure class="effect-honey tm-gallery-item">
+                          <img src="img/13_Ma_Shaodan.JPG" alt="Image" class="img-fluid">
+                          <figcaption2>
+							<h2><i>Professor Shaodan <span>MA</span></i></h2>
+                          </figcaption2>
+                        </figure>
+                      </a>
                     </div>
-                </div>
-            </div>
-
-        </div>
+                </div>                
+            </div>        
+          </div>
+		  
+      </div>
     </section>
 
-    <section id="program" class="tm-section-pad-top">
-        <div class="container tm-container-gallery">
-            <div class="row">
-                <div class="text-center col-12">
-                    <h2 class="tm-text-primary tm-section-title mb-4">Program</h2>
-                    <table align="center">
-                        <tr valign="top">
-                            <td width="50%">
+	<section id="program" class="tm-section-pad-top">
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Program</h2>
+			   <table align="center">
+					<tr valign="top">
+						<td width="50%">
+						
+				<table align="center">
+				  <tr id="tr02">
+					<td><strong>Day 1: 10 Jul. 2026 (Fri.)</strong>
+					<br/>Venue: A1216, 12/F, Jockey Club Council Chamber, Main Campus (MC), HKMU
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>Registration</strong>
+					<br/>08:30 - 09:00
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>Opening Ceremony</strong>
+					<br/>09:00 - 09:30
+					<br/>Professor Ricky Yu-kwong KWOK, <small>Vice President, HKMU</small>
+					<br/>Professor Hai LIU, <small>Associate Dean, HSUHK</small>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/10_Tony_Quek.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 1</strong>
+					<br/>09:30 - 10:10
+					<br/>
+					<br/>Unlocking the Potential of AI-RAN: A Pathway towards Future Network Intelligence
+					<br/>Professor Tony Q. S. QUEK
+					<br/><small>Singapore University of Technology and Design, Singapore</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/9_Shiwen_Mao.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 2</strong>
+					<br/>10:10 - 10:50
+					<br/>
+					<br/>TF-Diffusion: From Fine-Tuning to Training-Free Generative Models for RF-Based Human Activity Recognition
+					<br/>Professor Shiwen MAO
+					<br/><small>Auburn University, United States of America</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+          <tr id="tr01">
+					<td><a href="img/4_Yan_Zhang.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 3</strong>
+					<br/>10:50 - 11:30
+					<br/>
+					<br/>AI for Digital Twin
+					<br/>Professor Yan ZHANG
+					<br/><small>University of Electronic Science and Technology of China, China</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+          <tr id="tr01">
+					<td><a href="img/1_Kin_K_Leung.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 4</strong>
+					<br/>11:30 - 12:10
+					<br/>
+					<br/>From Resource Allocation to Reinforcement and Federated Learning in Communication Networks
+					<br/>Professor Kin K. LEUNG
+					<br/><small>Imperial College London, United Kingdom</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>VIP Lunch</strong>
+					<br/>12: 10 - 14: 00
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/12_Ng_Ping Chung.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 5</strong>
+					<br/>14:00 - 14:40
+					<br/>
+					<br/>Empowering Smart City Development by: "iAM Smart" and Digital Corporate Identity (CorpID) Platform
+					<br/>Dr. Chung NG
+					<br/><small>Digital Policy Office, Hong Kong SAR, China</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/14_Ebby_Chiu.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 6</strong>
+					<br/>14:40 - 15:20
+					<br/>
+					<br/>
+					<br/>Dr. Patrick LAM
+					<br/><small>Zyetric Technologies Limited, Hong Kong SAR, China</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+          <tr id="tr01">
+					<td><a href="img/13_Ma_Shaodan.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 7</strong>
+					<br/>15:20 - 16:00
+					<br/>
+					<br/>Intelligent Sensing and Communication in 6G: Towards a Sustainable Future
+					<br/>Professor Shaodan MA
+					<br/><small>University of Macau, Macau, China</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/5_Albert_Leung.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 8</strong>
+					<br/>16:00 - 16:40
+					<br/>
+					<br/>Enabling Cross-Border Smart Cities: The Role of ODR and LawTech in a Digital Future 
+					<br/>Ir Albert Chun Sing LEUNG
+					<br/><small>eBRAM International Online Dispute Resolution Centre, Hong Kong SAR, China </small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>Tea Break</strong>
+					<br/>16: 40 - 17: 10
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><strong>Special Session</strong>
+					<br/>17:10 - 17:50
+					<br/>GBA’s Smart City Frontier, Chair: Professor Ivan Wang-Hei HO, <small>PolyU</small>
+					<br/><strong>Roundtable Discussion</strong>
+					<br/>Mr. Dennis WONG, <small>HKT</small>
+          <br/>Professor Shaodan MA, <small>UM</small>
+          <br/>Ir Albert Chun Sing LEUNG, <small>eBRAM</small>
+          <br/>Dr. Patrick LAM, <small>Zyetric</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>VIP Dinner</strong>
+					<br/>18: 00 - 20: 00
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>End of Day 1 Conference</strong></td>
+				  </tr>
+				  <tr id="tr03">
+					<td>&nbsp;</td>
+				  </tr>
+				</table>
+						
+						</td>
+						<td width="50%">
+						
+				<table align="center">
+				  <tr id="tr02">
+					<td><strong>Day 2: 11 Jul. 2026 (Sat.)</strong>
+					<br/>Venue: A1216, 12/F, Jockey Club Council Chamber, Main Campus (MC), HKMU
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>Registration</strong>
+					<br/>08:30 - 09:20
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>Opening Speech</strong>
+					<br/>09:20 - 09:30
+					<br/>Professor Kevin King Fai HUNG, <small>EECS Department Head, HKMU</small>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/7_Sabita_Maharjan.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 1</strong>
+					<br/>09:30 - 10:10
+					<br/>
+					<br/>Federated Digital Twin Edge Networks for IIoT and 6G
+					<br/>Professor Sabita MAHARJAN
+					<br/><small>University of Oslo, Norway</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/8_Jianhua_Zhang.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 2</strong>
+					<br/>10:10 - 10:50
+					<br/>
+					<br/>Three Enabling Technologies for 6G Digital Twin Channel: Multimodal Sensing, Environment Knowledge, and Large Model
+					<br/>Professor Jianhua ZHANG
+					<br/><small>Beijing University of Posts and Telecommunications, China</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/2_Ling_Caroline_Li.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 3</strong>
+					<br/>10:50 - 11:30
+					</br>
+					<br/>From Pervasive Sensing to Digital Twins: Data and AI for Future Biomedical and Smart Health Systems
+					<br/>Professor Caroline Ling LI
+					<br/><small>City University of London, United Kingdom</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/11_Yongxu_Zhu.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 4</strong>
+					<br/>11:30 - 12:10
+					</br>
+					<br/>Empowering Future Smart City Networks with Fluid Antenna Systems
+					<br/>Professor Yongxu ZHU
+					<br/><small>Southeast University, China</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>VIP Lunch</strong>
+					<br/>12:10 - 14:00
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/3_Zhengguo_Sheng.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 5</strong>
+					<br/>14:00 - 14:40
+					</br>
+					<br/>Holistic AI-Driven Vehicular Networks for Digital Twins: Integrating Communications, Computing, and IoT
+					<br/>Professor Zhengguo SHENG
+					<br/><small>University of Sussex, United Kingdom</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><a href="img/6_Yang_Hong.JPG" target="_blank" id="tr01">
+					<strong>Keynote Speech 6</strong>
+					<br/>14:40 - 15:20
+					</br>
+					<br/>Towards Ultra-low Latency and Ultra-high Capacity Optical Communications for Future Smart Cities
+					<br/>Dr. Yang HONG
+					<br/><small>Microsoft Azure Fiber, United Kingdom</small>
+					<br/><small>(click for details)</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr01">
+					<td><strong>Special Session</strong>
+					<br/>15:30 - 16:20
+					<br/>Women in Smart City, Chair: Dr. Aileen Yun HOU, <small>HSUHK</small>
+					<br/><strong>Roundtable Discussion</strong>
+					<br/>Professor Jianhua ZHANG, <small>BUPT</small>
+          <br/>Professor Sabita MAHARJAN, <small>UiO</small>
+          <br/>Professor Caroline Ling LI, <small>CUL</small>
+          <br/>Professor Yongxu ZHU, <small>SEU</small>
+					</a>
+					</td>
+				  </tr>
+				  <tr id="tr02">
+					<td><strong>Closing Ceremony, and Networking Time</strong>
+					<br/>16:20 - 17:00
+					</td>
+				  </tr>
+          <tr id="tr02">
+					<td><strong>End of Day 2 Conference</strong></td>
+				  </tr>
+				  <tr id="tr03">
+					<td>&nbsp;</td>
+				  </tr>
+				</table>
 
-                                <table align="center">
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Day 1: 10 Jul. 2026 (Fri.)</strong>
-                                            <br />Venue: A1216, 12/F, Jockey Club Council Chamber, Main Campus (MC), HKMU
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Registration</strong>
-                                            <br />08:30 - 09:00
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Opening Ceremony</strong>
-                                            <br />09:00 - 09:30
-                                            <br />Professor Ricky Yu-kwong KWOK, <small>Vice President, HKMU</small>
-                                            <br />Professor Hai LIU, <small>Associate Dean, HSUHK</small>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/10_Tony_Quek.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 1</strong>
-                                                <br />09:30 - 10:10
-                                                <br />
-                                                <br />Unlocking the Potential of AI-RAN: A Pathway towards Future Network Intelligence
-                                                <br />Professor Tony Q. S. QUEK
-                                                <br /><small>Singapore University of Technology and Design, Singapore</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/9_Shiwen_Mao.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 2</strong>
-                                                <br />10:10 - 10:50
-                                                <br />
-                                                <br />TF-Diffusion: From Fine-Tuning to Training-Free Generative Models for RF-Based Human Activity Recognition
-                                                <br />Professor Shiwen MAO
-                                                <br /><small>Auburn University, United States of America</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/4_Yan_Zhang.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 3</strong>
-                                                <br />10:50 - 11:30
-                                                <br />
-                                                <br />AI for Digital Twin
-                                                <br />Professor Yan ZHANG
-                                                <br /><small>University of Electronic Science and Technology of China, China</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/1_Kin_K_Leung.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 4</strong>
-                                                <br />11:30 - 12:10
-                                                <br />
-                                                <br />From Resource Allocation to Reinforcement and Federated Learning in Communication Networks
-                                                <br />Professor Kin K. LEUNG
-                                                <br /><small>Imperial College London, United Kingdom</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>VIP Lunch</strong>
-                                            <br />12: 10 - 14: 00
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/12_Ng_Ping Chung.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 5</strong>
-                                                <br />14:00 - 14:40
-                                                <br />
-                                                <br />Empowering Smart City Development by: "iAM Smart" and Digital Corporate Identity (CorpID) Platform
-                                                <br />Dr. Chung NG
-                                                <br /><small>Digital Policy Office, Hong Kong SAR, China</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/14_Ebby_Chiu.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 6</strong>
-                                                <br />14:40 - 15:20
-                                                <br />
-                                                <br />
-                                                <br />Dr. Patrick LAM
-                                                <br /><small>Zyetric Technologies Limited, Hong Kong SAR, China</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/13_Ma_Shaodan.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 7</strong>
-                                                <br />15:20 - 16:00
-                                                <br />
-                                                <br />Intelligent Sensing and Communication in 6G: Towards a Sustainable Future
-                                                <br />Professor Shaodan MA
-                                                <br /><small>University of Macau, Macau, China</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/5_Albert_Leung.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 8</strong>
-                                                <br />16:00 - 16:40
-                                                <br />
-                                                <br />Enabling Cross-Border Smart Cities: The Role of ODR and LawTech in a Digital Future
-                                                <br />Ir Albert Chun Sing LEUNG
-                                                <br /><small>eBRAM International Online Dispute Resolution Centre, Hong Kong SAR, China </small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Tea Break</strong>
-                                            <br />16: 40 - 17: 10
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <strong>Special Session</strong>
-                                            <br />17:10 - 17:50
-                                            <br />GBA’s Smart City Frontier, Chair: Professor Ivan Wang-Hei HO, <small>PolyU</small>
-                                            <br /><strong>Roundtable Discussion</strong>
-                                            <br />Mr. Dennis WONG, <small>HKT</small>
-                                            <br />Professor Shaodan MA, <small>UM</small>
-                                            <br />Ir Albert Chun Sing LEUNG, <small>eBRAM</small>
-                                            <br />Dr. Patrick LAM, <small>Zyetric</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>VIP Dinner</strong>
-                                            <br />18: 00 - 20: 00
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td><strong>End of Day 1 Conference</strong></td>
-                                    </tr>
-                                    <tr id="tr03">
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                </table>
-
-                            </td>
-                            <td width="50%">
-
-                                <table align="center">
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Day 2: 11 Jul. 2026 (Sat.)</strong>
-                                            <br />Venue: A1216, 12/F, Jockey Club Council Chamber, Main Campus (MC), HKMU
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Registration</strong>
-                                            <br />08:30 - 09:20
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Opening Speech</strong>
-                                            <br />09:20 - 09:30
-                                            <br />Professor Kevin King Fai HUNG, <small>EECS Department Head, HKMU</small>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/7_Sabita_Maharjan.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 1</strong>
-                                                <br />09:30 - 10:10
-                                                <br />
-                                                <br />Federated Digital Twin Edge Networks for IIoT and 6G
-                                                <br />Professor Sabita MAHARJAN
-                                                <br /><small>University of Oslo, Norway</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/8_Jianhua_Zhang.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 2</strong>
-                                                <br />10:10 - 10:50
-                                                <br />
-                                                <br />Three Enabling Technologies for 6G Digital Twin Channel: Multimodal Sensing, Environment Knowledge, and Large Model
-                                                <br />Professor Jianhua ZHANG
-                                                <br /><small>Beijing University of Posts and Telecommunications, China</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/2_Ling_Caroline_Li.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 3</strong>
-                                                <br />10:50 - 11:30
-                                                </br>
-                                                <br />From Pervasive Sensing to Digital Twins: Data and AI for Future Biomedical and Smart Health Systems
-                                                <br />Professor Caroline Ling LI
-                                                <br /><small>City University of London, United Kingdom</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/11_Yongxu_Zhu.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 4</strong>
-                                                <br />11:30 - 12:10
-                                                </br>
-                                                <br />Empowering Future Smart City Networks with Fluid Antenna Systems
-                                                <br />Professor Yongxu ZHU
-                                                <br /><small>Southeast University, China</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>VIP Lunch</strong>
-                                            <br />12:10 - 14:00
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/3_Zhengguo_Sheng.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 5</strong>
-                                                <br />14:00 - 14:40
-                                                </br>
-                                                <br />Holistic AI-Driven Vehicular Networks for Digital Twins: Integrating Communications, Computing, and IoT
-                                                <br />Professor Zhengguo SHENG
-                                                <br /><small>University of Sussex, United Kingdom</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <a href="img/6_Yang_Hong.JPG" target="_blank" id="tr01">
-                                                <strong>Keynote Speech 6</strong>
-                                                <br />14:40 - 15:20
-                                                </br>
-                                                <br />Towards Ultra-low Latency and Ultra-high Capacity Optical Communications for Future Smart Cities
-                                                <br />Dr. Yang HONG
-                                                <br /><small>Microsoft Azure Fiber, United Kingdom</small>
-                                                <br /><small>(click for details)</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr01">
-                                        <td>
-                                            <strong>Special Session</strong>
-                                            <br />15:30 - 16:20
-                                            <br />Women in Smart City, Chair: Dr. Aileen Yun HOU, <small>HSUHK</small>
-                                            <br /><strong>Roundtable Discussion</strong>
-                                            <br />Professor Jianhua ZHANG, <small>BUPT</small>
-                                            <br />Professor Sabita MAHARJAN, <small>UiO</small>
-                                            <br />Professor Caroline Ling LI, <small>CUL</small>
-                                            <br />Professor Yongxu ZHU, <small>SEU</small>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td>
-                                            <strong>Closing Ceremony, and Networking Time</strong>
-                                            <br />16:20 - 17:00
-                                        </td>
-                                    </tr>
-                                    <tr id="tr02">
-                                        <td><strong>End of Day 2 Conference</strong></td>
-                                    </tr>
-                                    <tr id="tr03">
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                </table>
-
-
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
+						
+						</td>
+					</tr>
+				</table>
+					
+          </div>            
         </div>
+      </div>
     </section>
+	
+	<section id="registration" class="tm-section-pad-top">
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Registration</h2>
+              <p class="mx-auto tm-work-description" style="text-align: justify;">
 
-    <section id="registration" class="tm-section-pad-top">
-        <div class="container tm-container-gallery">
-            <div class="row">
-                <div class="text-center col-12">
-                    <h2 class="tm-text-primary tm-section-title mb-4">Registration</h2>
-                    <p class="mx-auto tm-work-description" style="text-align: justify;">
-
-                    </p>
-                    <p class="mx-auto tm-work-description">
-                        To register, please click following form:
-                        <div style="text-align: center; margin-top: 30px;">
-                            <a href="https://forms.gle/XZCsgHPJB7XLLDDw6" target="_blank" style="
+			  </p>
+                <p class="mx-auto tm-work-description">
+                To register, please click following form:
+                <div style="text-align: center; margin-top: 30px;">
+                <a href="https://forms.gle/XZCsgHPJB7XLLDDw6" target="_blank" style="
                   display: inline-block;
                   width: 260px;
                   height: 65px;
@@ -1245,397 +1176,395 @@
                   border-radius: 8px;
                   transition: all 0.3s ease;
                   " onmouseover="this.style.backgroundColor='#357ABD'; this.style.color='#FFD966'"
-                               onmouseout="this.style.backgroundColor='#4A90E2'; this.style.color='#ffffff'">Registration Form</a>
-                        </div>
-                    </p>
+                  onmouseout="this.style.backgroundColor='#4A90E2'; this.style.color='#ffffff'"
+                >Registration Form</a>
                 </div>
-            </div>
+              </p>
+          </div>            
         </div>
+      </div>
     </section>
     <section id="online-meeting-access" class="tm-section-pad-top">
-        <div class="container tm-container-gallery">
-            <div class="row">
-                <div class="text-center col-12">
-                    <h2 class="tm-text-primary tm-section-title mb-4">Online Meeting Access</h2>
-                    <!-- ========== 会议入口卡片（第一轮样式） ========== -->
-                    <div class="zoom-container">
-                        <p class="zoom-subtitle">Please click the corresponding button to join the Zoom meeting based on the current time.</p>
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Online Meeting Access</h2>
+         <!-- ========== 会议入口卡片（第一轮样式） ========== -->
+        <div class="zoom-container">
+          <p class="zoom-subtitle">Please click the corresponding button to join the Zoom meeting based on the current time.</p>
 
-                        <!-- 实时时钟 -->
-                        <div class="zoom-live-clock">
-                            <span class="dot"></span> Current Time: <span class="time-value" id="liveClock">--</span>
-                        </div>
+          <!-- 实时时钟 -->
+          <div class="zoom-live-clock">
+            <span class="dot"></span> Current Time: <span class="time-value" id="liveClock">--</span>
+          </div>
 
-                        <div class="zoom-btn-grid">
-                            <!-- Day1 上午 -->
-                            <div class="zoom-btn-row">
-                                <span class="zoom-status-badge" id="badge1">--</span>
-                                <a href="#" class="zoom-meeting-btn" id="btn1" onclick="handleZoomClick(0, event)">📅 Day 1 Morning</a>
-                            </div>
-                            <!-- Day1 下午 -->
-                            <div class="zoom-btn-row">
-                                <span class="zoom-status-badge" id="badge2">--</span>
-                                <a href="#" class="zoom-meeting-btn" id="btn2" onclick="handleZoomClick(1, event)">📅 Day 1 Afternoon</a>
-                            </div>
-                            <!-- Day2 上午 -->
-                            <div class="zoom-btn-row">
-                                <span class="zoom-status-badge" id="badge3">--</span>
-                                <a href="#" class="zoom-meeting-btn" id="btn3" onclick="handleZoomClick(2, event)">📅 Day 2 Morning</a>
-                            </div>
-                            <!-- Day2 下午 -->
-                            <div class="zoom-btn-row">
-                                <span class="zoom-status-badge" id="badge4">--</span>
-                                <a href="#" class="zoom-meeting-btn" id="btn4" onclick="handleZoomClick(3, event)">📅 Day 2 Afternoon</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ========== 会议入口卡片结束 ========== -->
-    </section>
-
-    <section id="venue" class="tm-section-pad-top">
-        <div class="container tm-container-gallery">
-            <div class="row">
-                <div class="text-center col-12">
-                    <h2 class="tm-text-primary tm-section-title mb-4">Venue</h2>
-                    <p class="mx-auto tm-work-description" style="text-align: justify;">
-                        The conference will be held at the Main Campus of Hong Kong Metropolitan University (HKMU), Ho Man Tin, Kowloon, Hong Kong.
-                        For information on directions to Hong Kong and HKMU, hotel options and the hottest and latest things to see, eat and do in Hong Kong, please visit the following links:<br />
-                        <table align="center" style="width:100%">
-                            <tr>
-                                <td><a href="https://www.hkmu.edu.hk/fmo/campus-information/directions-to-campus/" target="_blank"><img src="img/HKMU-campus-map.png"><br />How to get to Main Campus (MC), HKMU</a></td>
-                                <td><a href="https://www.discoverhongkong.com/eng/plan/traveller-info/how-to-get-to-hong-kong.html" target="_blank"><img src="img/how-to-get-to-hk.png"><br />How to get to Hong Kong</a></td>
-                            </tr>
-                            <tr>
-                                <td><a href="https://www.discoverhongkong.com/eng/deals/in-town-offers/hotels.html" target="_blank"><img src="img/hotel.png"><br />Hotel Offers</a></td>
-                                <td><a href="https://www.discoverhongkong.com/eng/index.html" target="_blank"><img src="img/explore-hk.jpg"><br />Explore Hong Kong</a></td>
-                            </tr>
-                        </table>
-                    </p>
-                </div>
+          <div class="zoom-btn-grid">
+            <!-- Day1 上午 -->
+            <div class="zoom-btn-row">
+              <span class="zoom-status-badge" id="badge1">--</span>
+              <a href="#" class="zoom-meeting-btn" id="btn1" onclick="handleZoomClick(0, event)">📅 Day 1 Morning</a>
             </div>
+            <!-- Day1 下午 -->
+            <div class="zoom-btn-row">
+              <span class="zoom-status-badge" id="badge2">--</span>
+              <a href="#" class="zoom-meeting-btn" id="btn2" onclick="handleZoomClick(1, event)">📅 Day 1 Afternoon</a>
+            </div>
+            <!-- Day2 上午 -->
+            <div class="zoom-btn-row">
+              <span class="zoom-status-badge" id="badge3">--</span>
+              <a href="#" class="zoom-meeting-btn" id="btn3" onclick="handleZoomClick(2, event)">📅 Day 2 Morning</a>
+            </div>
+            <!-- Day2 下午 -->
+            <div class="zoom-btn-row">
+              <span class="zoom-status-badge" id="badge4">--</span>
+              <a href="#" class="zoom-meeting-btn" id="btn4" onclick="handleZoomClick(3, event)">📅 Day 2 Afternoon</a>
+            </div>
+          </div>
         </div>
+                <!-- ========== 会议入口卡片结束 ========== -->
+  </section>
+	
+	<section id="venue" class="tm-section-pad-top">
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Venue</h2>
+              <p class="mx-auto tm-work-description" style="text-align: justify;">
+			  The conference will be held at the Main Campus of Hong Kong Metropolitan University (HKMU), Ho Man Tin, Kowloon, Hong Kong.
+			  For information on directions to Hong Kong and HKMU, hotel options and the hottest and latest things to see, eat and do in Hong Kong, please visit the following links:<br/>
+			  <table align="center" style="width:100%">
+				<tr>
+					<td><a href="https://www.hkmu.edu.hk/fmo/campus-information/directions-to-campus/" target="_blank"><img src="img/HKMU-campus-map.png"><br/>How to get to Main Campus (MC), HKMU</a></td>
+					<td><a href="https://www.discoverhongkong.com/eng/plan/traveller-info/how-to-get-to-hong-kong.html" target="_blank"><img src="img/how-to-get-to-hk.png"><br/>How to get to Hong Kong</a></td>
+				</tr>
+				<tr>
+					<td><a href="https://www.discoverhongkong.com/eng/deals/in-town-offers/hotels.html" target="_blank"><img src="img/hotel.png"><br/>Hotel Offers</a></td>
+					<td><a href="https://www.discoverhongkong.com/eng/index.html" target="_blank"><img src="img/explore-hk.jpg"><br/>Explore Hong Kong</a></td>
+				</tr>
+			  </table>
+			  </p>
+          </div>            
+        </div>
+      </div>
     </section>
-
+	
     <!-- Contact -->
     <section id="contact" class="tm-section-pad-top tm-parallax-2">
-        <div class="container tm-container-contact">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="mb-4 tm-section-title">Organizing Committee</h2>
-                    <div class="mb-5 tm-underline">
-                        <div class="tm-underline-inner"></div>
-                    </div>
-                    <p class="mb-5" id="black-shadow">
-                        <br /><strong>Chair:</strong> Professor Philips Fu-Lee WANG (Dean of School of S&T, HKMU)
-                        <br /><strong>Organizing Chairs:</strong> Dr. Yaru FU (HKMU), Dr. Kevin King Fai HUNG (Head of EECS, School of S&T, HKMU), Professor Ricky Yu-kwong KWOK (Vice President, HKMU)
-                        <br /><strong>Special Session Chairs:</strong> Dr. Aileen Yun HOU (HSUHK), Professor Hai LIU (Associate Dean, School of Decision Sciences, HSUHK)
-                        <br /><strong>Program Chairs:</strong> Dr. Bell Jianqing LIU (HKMU), Dr. Bruce Kwong Bun TONG (HKMU), Dr. Wyman Weiming WANG (HKMU), Dr. Debby Dan WANG (HKMU), Dr. Jimmy Sijie REN (HKMU)
-                        <br /><strong>Publicity Chairs:</strong> Dr. Vaithinathan KARTHIKEYAN (HKMU), Dr. Tony Moon Tong CHAN (HKMU), Dr. Jeff Siu Kei AU YEUNG (HKMU), Dr. Vincent Ho Yuet KWAN (HKMU), Dr. Ndudi EZEAMUZIE (HKMU), Mr. Harry Hing Lun LAI (HKMU)
-                        <br /><strong>Secretary:</strong> Dr. John Kwok Tai CHUI (HKMU)
-                        <br /><strong>Local Arrangement Chairs:</strong> Dr. Hongli HUANG (HKMU), Dr. Patrick Pak Yuen CHANG (HKMU), Mr. Hugh Ting Hung LUK (HKMU)
-                        <br /><strong>Technical Program Committee:</strong> Dr. Shu Yishu LI (HKMU), Dr. Kayley Xiaoxue MA (HKMU), Dr. Daisy Tiantian ZHANG (HKMU), Dr. Flora Jingyu ZHANG (HKMU), Dr. Wilson Hon Wai CHU (HKMU), Dr. Farah Fan YAN (HKMU). Dr. Adam Dong LIU (HKMU), Dr. Kevin Ka Wing TSE (HKMU), Dr. Steven Tak Shing TAI (HKMU), Professor Henry Hong-ning DAI (HKBU), Mr. Jimmy Xudong KANG (HKMU), Dr. Shirley Xueli CHEN (HKMU), Dr. Eddie Kai Chun TJON (HKMU), Dr. Dani Samer ASSI (HKMU), Dr. Shawn Xinyu WANG (HKMU), Dr. Charles Chao GUO (HKMU)
-                        <br /><strong>Finance Chairs:</strong> Dr. Alin Yalin LIU (HKMU), Dr. Tabitha Bishenghui TAO (HKMU)
-                        <br /><strong>Registration Chairs:</strong> Ms. Kexin SHI, Dr. Xiting WEN, Dr. Isaac Ka Ho LAU (HKMU), Dr. Elise Man Ling WONG (HKMU)
-                        <br /><strong>Web Master:</strong> Mr. Yuzhi ZHOU
-                        <br /><strong>Student Helpers:</strong> Mr. Wenshuai LIU, Mr. Tao QI, Ms. Jiahui FENG, Mr. Yongkang LI, Mr. Liang JI
-                        <br />
-                        <br /><strong>The symposium was fully supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China (Project No. UGC/IIDS16/E03/25).</strong>
-                    </p>
-                    <br />
-                    <!-- ★★★ 组织方 Logo 容器（PC端强制大尺寸） ★★★ -->
-                    <div class="org-logos-container" style="display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:40px auto 0 auto; padding:20px 40px 10px 40px;">
-                        <div class="org-logo-item" style="background:rgba(20,20,30,0.7); border-radius:12px; padding:12px 20px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
-                            <img src="img/HSU_school_logo.png" alt="HKMU Logo" style="display:block; width:300px; height:auto;" />
-                        </div>
-                        <div class="org-logo-item" style="background:rgba(20,20,30,0.7); border-radius:12px; padding:12px 20px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
-                            <img src="img/HSU_school_logo.png" alt="HSU Logo" style="display:block; width:300px; height:auto;" />
-                        </div>
-                    </div>
-                    <!-- ★★★ Logo 容器结束 ★★★ -->
-                </div> <!-- col-12 闭合 -->
-            </div> <!-- row 闭合 -->
-        </div> <!-- container 闭合 -->
-        <footer class="text-center small tm-footer">
-            <p class="mb-0">
-                Copyright &copy; 2026 Hong Kong Metropolitan University
-            </p>
-        </footer>
+      <div class="container tm-container-contact">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4 tm-section-title">Organizing Committee</h2>
+                <div class="mb-5 tm-underline">
+                  <div class="tm-underline-inner"></div>
+                </div>
+          <p class="mb-5" id="black-shadow">
+					<br/><strong>Chair:</strong> Professor Philips Fu-Lee WANG (Dean of School of S&T, HKMU)
+					<br/><strong>Organizing Chairs:</strong> Dr. Yaru FU (HKMU), Dr. Kevin King Fai HUNG (Head of EECS, School of S&T, HKMU), Professor Ricky Yu-kwong KWOK (Vice President, HKMU)
+					<br/><strong>Special Session Chairs:</strong> Dr. Aileen Yun HOU (HSUHK), Professor Hai LIU (Associate Dean, School of Decision Sciences, HSUHK) 
+					<br/><strong>Program Chairs:</strong> Dr. Bell Jianqing LIU (HKMU), Dr. Bruce Kwong Bun TONG (HKMU), Dr. Wyman Weiming WANG (HKMU), Dr. Debby Dan WANG (HKMU), Dr. Jimmy Sijie REN (HKMU)
+					<br/><strong>Publicity Chairs:</strong> Dr. Vaithinathan KARTHIKEYAN (HKMU), Dr. Tony Moon Tong CHAN (HKMU), Dr. Jeff Siu Kei AU YEUNG (HKMU), Dr. Vincent Ho Yuet KWAN (HKMU), Dr. Ndudi EZEAMUZIE (HKMU), Mr. Harry Hing Lun LAI (HKMU)
+					<br/><strong>Secretary:</strong> Dr. John Kwok Tai CHUI (HKMU)
+					<br/><strong>Local Arrangement Chairs:</strong> Dr. Hongli HUANG (HKMU), Dr. Patrick Pak Yuen CHAN (HKMU), Mr. Hugh Ting Hung LUK (HKMU)
+					<br/><strong>Technical Program Committee:</strong> Dr. Shu Yishu LI (HKMU), Dr. Kayley Xiaoxue MA (HKMU), Dr. Daisy Tiantian ZHANG (HKMU), Dr. Flora Jingyu ZHANG (HKMU), Dr. Wilson Hon Wai CHU (HKMU), Dr. Farah Fan YAN (HKMU). Dr. Adam Dong LIU (HKMU), Dr. Kevin Ka Wing TSE (HKMU), Dr. Steven Tak Shing TAI (HKMU), Professor Henry Hong-ning DAI (HKBU), Mr. Jimmy Xudong KANG (HKMU), Dr. Shirley Xueli CHEN (HKMU), Dr. Eddie Kai Chun TJON (HKMU), Dr. Dani Samer ASSI (HKMU), Dr. Shawn Xinyu WANG (HKMU), Dr. Charles Chao GUO (HKMU)
+					<br/><strong>Finance Chairs:</strong> Dr. Alin Yalin LIU (HKMU), Dr. Tabitha Bishenghui TAO (HKMU)
+					<br/><strong>Registration Chairs:</strong> Ms. Kexin SHI, Dr. Xiting WEN, Dr. Isaac Ka Ho LAU (HKMU), Dr. Elise Man Ling WONG (HKMU)
+					<br/><strong>Web Master:</strong> Mr. Yuzhi ZHOU
+					<br/><strong>Student Helpers:</strong> Mr. Wenshuai LIU, Mr. Tao QI, Ms. Jiahui FENG, Mr. Yongkang LI, Mr. Liang JI
+          <br/>
+					<br/><strong>The symposium was fully supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China (Project No. UGC/IIDS16/E03/25).</strong>
+          <br/>
+          <br/>  
+          </p>
+				<br />
+            </div>
+
+        </div>
+      </div>
+<footer class="text-center small tm-footer">
+  <div class="footer-logos">
+    <img src="img/logo_hkmu_st_white.png" alt="HKMU S&T Logo" class="footer-logo" />
+    <img src="img/logo_hsu_cs_white.png" alt="HSU CS Logo" class="footer-logo" />
+  </div>
+  <p class="footer-copyright mb-0">   <!-- ★ 加了 footer-copyright 类 -->
+    Copyright &copy; 2026 Hong Kong Metropolitan University
+  </p>
+</footer>
     </section>
-    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>     
     <script src="slick/slick.min.js"></script>
     <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.singlePageNav.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>     
+    <script src="js/bootstrap.min.js"></script> 
     <script>
 
-        function getOffSet() {
-            var _offset = 450;
-            var windowHeight = window.innerHeight;
+      function getOffSet(){
+        var _offset = 450;
+        var windowHeight = window.innerHeight;
 
-            if (windowHeight > 500) {
-                _offset = 400;
-            }
-            if (windowHeight > 680) {
-                _offset = 300
-            }
-            if (windowHeight > 830) {
-                _offset = 210;
-            }
-
-            return _offset;
+        if(windowHeight > 500) {
+          _offset = 400;
+        } 
+        if(windowHeight > 680) {
+          _offset = 300
+        }
+        if(windowHeight > 830) {
+          _offset = 210;
         }
 
-        function setParallaxPosition($doc, multiplier, $object) {
-            var offset = getOffSet();
-            var from_top = $doc.scrollTop(),
-                bg_css = 'center ' + (multiplier * from_top - offset) + 'px';
-            $object.css({ "background-position": bg_css });
+        return _offset;
+      }
+
+      function setParallaxPosition($doc, multiplier, $object){
+        var offset = getOffSet();
+        var from_top = $doc.scrollTop(),
+          bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
+        $object.css({"background-position" : bg_css });
+      }
+
+      // Parallax function
+      // Adapted based on https://codepen.io/roborich/pen/wpAsm        
+      var background_image_parallax = function($object, multiplier, forceSet){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        // $object.css({"background-attatchment" : "fixed"});
+
+        if(forceSet) {
+          setParallaxPosition($doc, multiplier, $object);
+        } else {
+          $(window).scroll(function(){          
+            setParallaxPosition($doc, multiplier, $object);
+          });
         }
+      };
 
-        // Parallax function
-        // Adapted based on https://codepen.io/roborich/pen/wpAsm
-        var background_image_parallax = function ($object, multiplier, forceSet) {
-            multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-            multiplier = 1 - multiplier;
-            var $doc = $(document);
-            // $object.css({"background-attatchment" : "fixed"});
+      var background_image_parallax_2 = function($object, multiplier){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        $object.css({"background-attachment" : "fixed"});
+        $(window).scroll(function(){
+          var firstTop = $object.offset().top,
+              pos = $(window).scrollTop(),
+              yPos = Math.round((multiplier * (firstTop - pos)) - 186);              
 
-            if (forceSet) {
-                setParallaxPosition($doc, multiplier, $object);
-            } else {
-                $(window).scroll(function () {
-                    setParallaxPosition($doc, multiplier, $object);
-                });
-            }
-        };
+          var bg_css = 'center ' + yPos + 'px';
 
-        var background_image_parallax_2 = function ($object, multiplier) {
-            multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-            multiplier = 1 - multiplier;
-            var $doc = $(document);
-            $object.css({ "background-attachment": "fixed" });
-            $(window).scroll(function () {
-                var firstTop = $object.offset().top,
-                    pos = $(window).scrollTop(),
-                    yPos = Math.round((multiplier * (firstTop - pos)) - 186);
-
-                var bg_css = 'center ' + yPos + 'px';
-
-                $object.css({ "background-position": bg_css });
-            });
-        };
-
-        $(function () {
-            // Hero Section - Background Parallax
-            background_image_parallax($(".tm-parallax"), 0.30, false);
-            background_image_parallax_2($("#contact"), 0.80);
-
-            // Handle window resize
-            window.addEventListener('resize', function () {
-                background_image_parallax($(".tm-parallax"), 0.30, true);
-            }, true);
-
-            // Detect window scroll and update navbar
-            $(window).scroll(function (e) {
-                if ($(document).scrollTop() > 120) {
-                    $('.tm-navbar').addClass("scroll");
-                } else {
-                    $('.tm-navbar').removeClass("scroll");
-                }
-            });
-
-            $(window).scroll(function (e) {
-                if ($(document).scrollTop() > 60) {
-                    $('.tm-navbar').addClass("scroll");
-                    $('#logo').attr('src', 'img/logo-hkmu.png');
-                    $('#logo-hsu').attr('src', 'img/HSU_logo.png');
-                } else {
-                    $('.tm-navbar').removeClass("scroll");
-                    $('#logo').attr('src', 'img/logo-hkmu_white.png');
-                    $('#logo-hsu').attr('src', 'img/HSU_logo_white.png');
-                }
-            });
-
-            // Close mobile menu after click
-            $('#tmNav a').on('click', function () {
-                $('.navbar-collapse').removeClass('show');
-            })
-
-            // Scroll to corresponding section with animation
-            $('#tmNav').singlePageNav();
-
-            // Add smooth scrolling to all links
-            // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-            $("a").on('click', function (event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    var hash = this.hash;
-
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 400, function () {
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
-
-            // Pop up
-            $('.tm-gallery').magnificPopup({
-                delegate: 'a',
-                type: 'image',
-                gallery: { enabled: true }
-            });
-
-            // Gallery
-            $('.tm-gallery').slick({
-                dots: true,
-                infinite: false,
-                slidesToShow: 5,
-                slidesToScroll: 2,
-                responsive: [
-                    {
-                        breakpoint: 1199,
-                        settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 767,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
+          $object.css({"background-position" : bg_css });
         });
+      };
+      
+      $(function(){
+        // Hero Section - Background Parallax
+        background_image_parallax($(".tm-parallax"), 0.30, false);
+        background_image_parallax_2($("#contact"), 0.80);   
+        
+        // Handle window resize
+        window.addEventListener('resize', function(){
+          background_image_parallax($(".tm-parallax"), 0.30, true);
+        }, true);
+
+        // Detect window scroll and update navbar
+        $(window).scroll(function(e){          
+          if($(document).scrollTop() > 120) {
+            $('.tm-navbar').addClass("scroll");
+          } else {
+            $('.tm-navbar').removeClass("scroll");
+          }
+        });
+		  
+        $(window).scroll(function(e){          
+          if($(document).scrollTop() > 60) {
+            $('.tm-navbar').addClass("scroll");
+            $('#logo').attr('src', 'img/logo-hkmu.png');
+            $('#logo-hsu').attr('src', 'img/HSU_logo.png');
+          } else {
+            $('.tm-navbar').removeClass("scroll");
+            $('#logo').attr('src', 'img/logo-hkmu_white.png');
+            $('#logo-hsu').attr('src', 'img/HSU_logo_white.png');
+          }
+        });
+        
+        // Close mobile menu after click 
+        $('#tmNav a').on('click', function(){
+          $('.navbar-collapse').removeClass('show'); 
+        })
+
+        // Scroll to corresponding section with animation
+        $('#tmNav').singlePageNav();        
+        
+        // Add smooth scrolling to all links
+        // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+        $("a").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 400, function(){
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+
+        // Pop up
+        $('.tm-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: { enabled: true }
+        });
+
+        // Gallery
+        $('.tm-gallery').slick({
+          dots: true,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+        });
+      });
     </script>
     <script>
-        // ============================================================
-        //  ★★★ 修改 Zoom 链接和时间（根据您的 Program 调整） ★★★
-        // ============================================================
-        const meetings = [
-            {
-                name: 'Day 1 Morning',
-                zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=97625273782',   // ← 替换
-                startTime: '2026-07-10T08:20:00',
-                endTime: '2026-07-10T12:20:00',
-                waitMsg: '⏳ The meeting has not started yet. Please wait until the scheduled time.',
-                finishMsg: '🏁 The meeting has ended.'
-            },
-            {
-                name: 'Day 1 Afternoon',
-                zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=99166710979',   // ← 替换
-                startTime: '2026-07-10T13:50:00',
-                endTime: '2026-07-10T18:00:00',
-                waitMsg: '⏳ The meeting has not started yet. Please wait until the scheduled time.',
-                finishMsg: '🏁 The meeting has ended.'
-            },
-            {
-                name: 'Day 2 Morning',
-                zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=98152005708',   // ← 替换
-                startTime: '2026-07-11T08:20:00',
-                endTime: '2026-07-11T12:20:00',
-                waitMsg: '⏳ The meeting has not started yet. Please wait until the scheduled time.',
-                finishMsg: '🏁 The meeting has ended.'
-            },
-            {
-                name: 'Day 2 Afternoon',
-                zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=91024449365',   // ← 替换
-                startTime: '2026-07-11T13:50:00',
-                endTime: '2026-07-11T17:10:00',
-                waitMsg: '⏳ The meeting has not started yet. Please wait until the scheduled time.',
-                finishMsg: '🏁 The meeting has ended.'
-            }
-        ];
+  // ============================================================
+  //  ★★★ 修改 Zoom 链接和时间（根据您的 Program 调整） ★★★
+  // ============================================================
+  const meetings = [
+    {
+      name: 'Day 1 Morning',
+      zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=97625273782',   // ← 替换
+      startTime: '2026-07-10T08:20:00',
+      endTime:   '2026-07-10T12:20:00',
+      waitMsg:   '⏳ The meeting has not started yet. Please wait until the scheduled time.',
+      finishMsg: '🏁 The meeting has ended.'
+    },
+    {
+      name: 'Day 1 Afternoon',
+      zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=99166710979',   // ← 替换
+      startTime: '2026-07-10T13:50:00',
+      endTime:   '2026-07-10T18:00:00',
+      waitMsg:   '⏳ The meeting has not started yet. Please wait until the scheduled time.',
+      finishMsg: '🏁 The meeting has ended.'
+    },
+    {
+      name: 'Day 2 Morning',
+      zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=98152005708',   // ← 替换
+      startTime: '2026-07-11T08:20:00',
+      endTime:   '2026-07-11T12:20:00',
+      waitMsg:   '⏳ The meeting has not started yet. Please wait until the scheduled time.',
+      finishMsg: '🏁 The meeting has ended.'
+    },
+    {
+      name: 'Day 2 Afternoon',
+      zoomLink: 'https://hkmu.zoom.us/j/3311074379?omn=91024449365',   // ← 替换
+      startTime: '2026-07-11T13:50:00',
+      endTime:   '2026-07-11T17:10:00',
+      waitMsg:   '⏳ The meeting has not started yet. Please wait until the scheduled time.',
+      finishMsg: '🏁 The meeting has ended.'
+    }
+  ];
 
-        function parseTime(str) {
-            const [date, time] = str.split('T');
-            const [y, m, d] = date.split('-').map(Number);
-            const [hh, mm, ss] = time.split(':').map(Number);
-            return new Date(y, m - 1, d, hh, mm, ss || 0);
-        }
+  function parseTime(str) {
+    const [date, time] = str.split('T');
+    const [y,m,d] = date.split('-').map(Number);
+    const [hh,mm,ss] = time.split(':').map(Number);
+    return new Date(y, m-1, d, hh, mm, ss||0);
+  }
 
-        const parsed = meetings.map(m => ({
-            ...m,
-            start: parseTime(m.startTime),
-            end: parseTime(m.endTime)
-        }));
+  const parsed = meetings.map(m => ({
+    ...m,
+    start: parseTime(m.startTime),
+    end:   parseTime(m.endTime)
+  }));
 
-        function getStatus(m) {
-            const now = new Date();
-            if (now < m.start) return 'upcoming';
-            if (now <= m.end) return 'live';
-            return 'ended';
-        }
+  function getStatus(m) {
+    const now = new Date();
+    if (now < m.start) return 'upcoming';
+    if (now <= m.end)  return 'live';
+    return 'ended';
+  }
 
-        const btns = [
-            document.getElementById('btn1'),
-            document.getElementById('btn2'),
-            document.getElementById('btn3'),
-            document.getElementById('btn4')
-        ];
-        const badges = [
-            document.getElementById('badge1'),
-            document.getElementById('badge2'),
-            document.getElementById('badge3'),
-            document.getElementById('badge4')
-        ];
-        const clockEl = document.getElementById('liveClock');
+  const btns = [
+    document.getElementById('btn1'),
+    document.getElementById('btn2'),
+    document.getElementById('btn3'),
+    document.getElementById('btn4')
+  ];
+  const badges = [
+    document.getElementById('badge1'),
+    document.getElementById('badge2'),
+    document.getElementById('badge3'),
+    document.getElementById('badge4')
+  ];
+  const clockEl = document.getElementById('liveClock');
 
-        function updateUI() {
-            const now = new Date();
-            clockEl.textContent = now.toLocaleString('zh-CN', {
-                year: 'numeric', month: '2-digit', day: '2-digit',
-                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-            });
+  function updateUI() {
+    const now = new Date();
+    clockEl.textContent = now.toLocaleString('zh-CN', {
+      year:'numeric', month:'2-digit', day:'2-digit',
+      hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false
+    });
 
-            for (let i = 0; i < parsed.length; i++) {
-                const m = parsed[i];
-                const status = getStatus(m);
-                const btn = btns[i];
-                const badge = badges[i];
+    for (let i = 0; i < parsed.length; i++) {
+      const m = parsed[i];
+      const status = getStatus(m);
+      const btn = btns[i];
+      const badge = badges[i];
 
-                btn.className = 'zoom-meeting-btn state-' + status;
-                btn.textContent = (status === 'live' ? '▶ ' : status === 'upcoming' ? '⏳ ' : '🔒 ') + m.name;
+      btn.className = 'zoom-meeting-btn state-' + status;
+      btn.textContent = (status === 'live' ? '▶ ' : status === 'upcoming' ? '⏳ ' : '🔒 ') + m.name;
 
-                badge.textContent = status === 'live' ? '🟢 In Progress' : (status === 'upcoming' ? '⏳ Upcoming' : '🔒 Ended');
-                badge.className = 'zoom-status-badge ' + status;
-            }
-        }
+      badge.textContent = status === 'live' ? '🟢 In Progress' : (status === 'upcoming' ? '⏳ Upcoming' : '🔒 Ended');
+      badge.className = 'zoom-status-badge ' + status;
+    }
+  }
 
-        window.handleZoomClick = function (index, event) {
-            const m = parsed[index];
-            const status = getStatus(m);
-            if (status === 'live') {
-                window.open(m.zoomLink, '_blank');
-            } else if (status === 'upcoming') {
-                event.preventDefault();
-                alert(m.waitMsg);
-            } else {
-                event.preventDefault();
-                alert(m.finishMsg);
-            }
-        };
+  window.handleZoomClick = function(index, event) {
+    const m = parsed[index];
+    const status = getStatus(m);
+    if (status === 'live') {
+      window.open(m.zoomLink, '_blank');
+    } else if (status === 'upcoming') {
+      event.preventDefault();
+      alert(m.waitMsg);
+    } else {
+      event.preventDefault();
+      alert(m.finishMsg);
+    }
+  };
 
-        // 首次更新并每1秒刷新一次
-        updateUI();
-        setInterval(updateUI, 1000);
-    </script>
-</body>
+  // 首次更新并每1秒刷新一次
+  updateUI();
+  setInterval(updateUI, 1000);
+</script>
+  </body>
 </html>
