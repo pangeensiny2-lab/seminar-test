@@ -182,14 +182,17 @@
     .footer-logos {
         flex-direction: column !important;
         gap: 20px !important;
-        padding-left: 0 !important;
+        padding-left: 0 !important;    /* 取消桌面端右偏移 */
         align-items: center !important;
-        margin-top: 40px !important;   /* 新增：避免与上方文字重叠 */
     }
     .footer-logos img {
         width: 80% !important;
         max-width: 300px !important;
         height: auto !important;
+    }
+    /* 移动端显示空行容器，增加与 logo 的间距 */
+    .footer-spacer {
+        display: block !important;
     }
 }
 /* ========== 通用手机适配（所有屏幕 ≤ 768px 生效） ========== */
@@ -408,6 +411,9 @@
         max-width: 80% !important;
         height: auto !important;
     }
+        .footer-spacer {
+        display: block !important;
+    }
 }
 /* ========== Zoom 会议入口卡片样式（第一轮同款） ========== */
 :root {
@@ -603,6 +609,10 @@
 .footer-copyright {
   margin-top: 10px;             /* ★ 下移量，数值越小越靠下（可调） */
   margin-bottom: 0;
+}
+/* 移动端空行容器：默认隐藏（桌面端不需要） */
+.footer-spacer {
+  display: none;
 }
 </style>
 </head>
@@ -1299,6 +1309,10 @@
           <br/>
           <br/>  
           </p>
+          <!-- 移动端额外间距（避免与上方文字重叠） -->
+          <div class="footer-spacer">
+            <br/><br/><br/><br/>
+          </div>
 				<br />
             </div>
 
