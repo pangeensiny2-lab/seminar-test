@@ -419,6 +419,10 @@
         max-width: 80% !important;
         height: auto !important;
     }
+    /* 平板显示额外空行（4行） */
+    .tablet-spacer {
+        display: block !important;
+    }
 }
 /* ========== Zoom 会议入口卡片样式（第一轮同款） ========== */
 :root {
@@ -617,6 +621,10 @@
 }
 /* 移动端空行容器：默认隐藏（桌面端不需要） */
 .footer-spacer {
+  display: none;
+}
+/* 平板专属空行容器：默认隐藏 */
+.tablet-spacer {
   display: none;
 }
 </style>
@@ -1312,14 +1320,16 @@
           <br/>
 					<br/><strong>The symposium was fully supported by a grant from the Research Grants Council of the Hong Kong Special Administrative Region, China (Project No. UGC/IIDS16/E03/25).</strong>
           <br/>
-          <br/>  
+          <br/> 
+          <br/> 
           </p>
-          <!-- 移动端额外间距（避免与上方文字重叠） -->
+         <!-- 移动端额外间距（避免与上方文字重叠） -->
           <div class="footer-spacer">
             <br/><br/>
-          </div>
-				<br />
+            <div class="tablet-spacer">
+              <br/><br/><br/><br/>
             </div>
+          </div>
 
         </div>
       </div>
