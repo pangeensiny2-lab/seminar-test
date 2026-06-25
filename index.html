@@ -178,6 +178,18 @@
         display: block !important;
         word-break: break-word !important;
     }
+    /* ----- 12. Footer logos 上下排列（手机） ----- */
+    .footer-logos {
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding-left: 0 !important;    /* 取消桌面端右偏移 */
+        align-items: center !important;
+    }
+    .footer-logos img {
+        width: 80% !important;
+        max-width: 300px !important;
+        height: auto !important;
+    }
 }
 /* ========== 通用手机适配（所有屏幕 ≤ 768px 生效） ========== */
 @media only screen and (orientation: landscape) and (max-width: 900px) {
@@ -383,6 +395,17 @@
         /* 手机版 Detailed Program 按钮下移 1cm（总 margin-top = 原 1cm + 新增 1cm = 2cm） */
     .tm-intro-text-container .tm-next {
       margin-top: 2cm !important;
+    }
+    .footer-logos {
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding-left: 0 !important;
+        align-items: center !important;
+    }
+    .footer-logos img {
+        width: auto !important;
+        max-width: 80% !important;
+        height: auto !important;
     }
 }
 /* ========== Zoom 会议入口卡片样式（第一轮同款） ========== */
